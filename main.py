@@ -51,7 +51,7 @@ with filecol:
     uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png", "bmp"])
 with textcol:
     st.text('Do more with the Image \neg. Write a blog based on the image...\n    What is the recipe of the food? etc.')
-    uploaded_text = st.text_input('What to do with the image?')
+    uploaded_text = st.text_input('What to do with the image? (Optional)')
 
 if uploaded_file is not None:
     img = PIL.Image.open(uploaded_file)
