@@ -44,8 +44,8 @@ st.set_page_config(
 
 genai.configure(api_key="AIzaSyCyGBa2I6Y_fsqXXpdk-JYK3Z5TPMM4Bgo")
 model = genai.GenerativeModel("gemini-pro-vision")
-
-st.header("Describe the Image")
+st.markdown("<h1 style='text-align: center;'>Kudos AI 🤖</h1>", unsafe_allow_html=True)
+st.subheader("Play with Image")
 filecol, textcol = st.columns(2)
 with filecol:
     uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png", "bmp"])
