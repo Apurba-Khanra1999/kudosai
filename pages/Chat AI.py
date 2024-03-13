@@ -30,13 +30,15 @@ chat_history = st.empty()  # Empty container to hold the chat history
 
 def update_chat_history(message, response):
     chat_history.markdown(f"**You:** {message}")
-    chat_history.write(f"KUDOS RESPONSE - {response}")
+    chat_history.markdown(f"KUDOS RESPONSE - {response}")
 
 message_input = st.text_input(label="Message Kudo", placeholder="Type your message here...")
 
 if message_input:
     response = gemini_chat(message_input, chat_history.text)
     update_chat_history(message_input, response)
+    response_area = st.text_area("Response", response, height=400)
+
 
 # st.button("Generate", disabled=not message_input)  # Disable button if no message entered
 hide_streamlit_style = """
